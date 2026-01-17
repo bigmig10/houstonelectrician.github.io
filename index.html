@@ -1,41 +1,373 @@
-<form id="intakeForm">
-  <input required type="text" name="name" placeholder="Full name"/>
-  <input required type="tel" name="phone" placeholder="Phone (SMS/iMessage capable)"/>
-  <input required type="email" name="email" placeholder="Email"/>
-  <input required type="text" name="timezone" placeholder="Time zone"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Async-First Intake</title>
+  <meta name="description" content="Transparent pricing. No sales calls. Review pricing, complete intake, receive next steps by text."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
 
-  <select required name="contact">
-    <option value="">Preferred communication</option>
-    <option value="imessage">iMessage / Text</option>
-    <option value="email">Email</option>
-  </select>
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="pill">Async-first</span>
+      <span class="muted">Text preferred · Phone for urgent only</span>
+      <a class="topbar-link" href="#intake">Start Intake</a>
+    </div>
+  </div>
 
-  <textarea required name="problem" placeholder="Primary goal / problem (short answer)"></textarea>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <span class="logo"></span>
+        <span>YOUR BRAND</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-ghost" href="#intake">Start Intake</a>
+      </nav>
+    </div>
+  </header>
 
-  <select required name="urgency">
-    <option value="">Urgency</option>
-    <option value="immediate">Immediate</option>
-    <option value="30_days">Within 30 days</option>
-    <option value="exploring">Exploring</option>
-  </select>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="kicker">Transparent pricing · No sales calls</div>
+        <h1>Move fast without wasting time on the phone.</h1>
+        <p class="lead">
+          Review pricing, complete a 3-minute intake, and get next steps by text.
+          Calls are reserved for edge cases only.
+        </p>
 
-  <select required name="budget">
-    <option value="">Budget range</option>
-    <option value="tier_1">Tier 1</option>
-    <option value="tier_2">Tier 2</option>
-    <option value="tier_3">Tier 3</option>
-  </select>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#pricing">View Pricing</a>
+          <a class="btn btn-secondary" href="#intake">Start Intake</a>
+        </div>
 
-  <label class="checkbox">
-    <input id="pricingAck" type="checkbox" required />
-    I have reviewed the pricing above
-  </label>
+        <div class="trust-row">
+          <div class="trust-item">
+            <div class="trust-title">Async-first</div>
+            <div class="muted">iMessage / Email</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-title">Clarity</div>
+            <div class="muted">Transparent pricing</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-title">Speed</div>
+            <div class="muted">Intake replaces calls</div>
+          </div>
+        </div>
+      </div>
 
-  <textarea name="notes" placeholder="Anything else that materially affects scope? (optional)"></textarea>
+      <div class="hero-right">
+        <div class="mock-card">
+          <div class="mock-header">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <span class="mock-title">Next steps (by text)</span>
+          </div>
+          <div class="mock-body">
+            <div class="bubble you">Intake received.</div>
+            <div class="bubble you">Reviewing now. Next steps soon.</div>
+            <div class="bubble me">Perfect. No call needed?</div>
+            <div class="bubble you">Correct. We'll keep it async.</div>
+          </div>
+          <div class="mock-foot muted">Phone is urgent-only.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <button id="submitBtn" type="submit" class="btn-primary">Submit Intake</button>
+  <!-- Value props -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Designed for Gen-Z expectations</h2>
+        <p class="muted">Direct pricing, minimal friction, written confirmation, and sane boundaries.</p>
+      </div>
 
-  <p id="statusMsg" class="status" aria-live="polite"></p>
-</form>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Full transparency</h3>
+          <p class="muted">Pricing and scope live on the site. No “call for a quote.”</p>
+        </div>
+        <div class="card">
+          <h3>Intake replaces discovery</h3>
+          <p class="muted">You submit once. We don’t re-ask basic questions over the phone.</p>
+        </div>
+        <div class="card">
+          <h3>Confirmations keep us sane</h3>
+          <p class="muted">Every submission produces a confirmation state (and automation-ready hooks).</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="app.js"></script>
+  <!-- How it works -->
+  <section id="how" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p class="muted">Simple, predictable, and fast.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-title">Review pricing</div>
+            <div class="muted">Everything you need is on this page.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">Complete intake</div>
+            <div class="muted">~3 minutes. Replaces a discovery call.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">Get next steps by text</div>
+            <div class="muted">We confirm alignment in writing.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-title">Call only if required</div>
+            <div class="muted">Reserved for true edge cases or urgent issues.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="boundary">
+        If pricing and scope aren’t aligned, we won’t proceed.
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pricing</h2>
+        <p class="muted">Real numbers. Clear scope. No pressure calls.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-top">
+            <h3>Starter</h3>
+            <div class="price">$X setup <span class="muted">+ $X/mo</span></div>
+          </div>
+          <ul class="list">
+            <li>Includes: X</li>
+            <li>Excludes: X</li>
+            <li>Best for: X</li>
+            <li>Not for: bargain hunting</li>
+          </ul>
+          <a class="btn btn-secondary w-full" href="#intake">Start Intake</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="badge">Most common</div>
+          <div class="price-top">
+            <h3>Standard</h3>
+            <div class="price">$X setup <span class="muted">+ $X/mo</span></div>
+          </div>
+          <ul class="list">
+            <li>Includes: X</li>
+            <li>Excludes: X</li>
+            <li>Best for: serious operators</li>
+            <li>Not for: phone-first workflows</li>
+          </ul>
+          <a class="btn btn-primary w-full" href="#intake">Start Intake</a>
+        </div>
+
+        <div class="price-card">
+          <div class="price-top">
+            <h3>Advanced</h3>
+            <div class="price">$X+ <span class="muted">custom scope</span></div>
+          </div>
+          <ul class="list">
+            <li>Custom scope</li>
+            <li>Requires intake approval</li>
+            <li>Best for: complex requirements</li>
+          </ul>
+          <a class="btn btn-secondary w-full" href="#intake">Start Intake</a>
+        </div>
+      </div>
+
+      <div class="filter-note">
+        If you’re price-shopping or want long phone calls, this is not a fit.
+      </div>
+    </div>
+  </section>
+
+  <!-- Intake -->
+  <section id="intake" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Intake checklist</h2>
+        <p class="muted">This replaces a discovery call. If pricing isn’t reviewed, the form will not submit.</p>
+      </div>
+
+      <div class="intake-grid">
+        <div class="card">
+          <h3>Before you submit</h3>
+          <ul class="list">
+            <li>Reviewed pricing above</li>
+            <li>Know your urgency and budget tier</li>
+            <li>Prefer text/iMessage for updates</li>
+            <li>Phone is for urgent only</li>
+          </ul>
+          <div class="mini-note muted">
+            After submission: confirmation + next steps by text.
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="intakeForm">
+            <div class="row-2">
+              <div class="field">
+                <label>Full name</label>
+                <input required type="text" name="name" placeholder="Full name" />
+              </div>
+              <div class="field">
+                <label>Time zone</label>
+                <input required type="text" name="timezone" placeholder="America/Chicago" />
+              </div>
+            </div>
+
+            <div class="row-2">
+              <div class="field">
+                <label>Phone (SMS/iMessage)</label>
+                <input required type="tel" name="phone" placeholder="(555) 555-5555" />
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input required type="email" name="email" placeholder="you@domain.com" />
+              </div>
+            </div>
+
+            <div class="row-2">
+              <div class="field">
+                <label>Preferred communication</label>
+                <select required name="contact">
+                  <option value="">Select</option>
+                  <option value="imessage">iMessage / Text</option>
+                  <option value="email">Email</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Urgency</label>
+                <select required name="urgency">
+                  <option value="">Select</option>
+                  <option value="immediate">Immediate</option>
+                  <option value="30_days">Within 30 days</option>
+                  <option value="exploring">Exploring</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Primary goal / problem</label>
+              <textarea required name="problem" rows="3" placeholder="Short answer"></textarea>
+            </div>
+
+            <div class="row-2">
+              <div class="field">
+                <label>Budget range</label>
+                <select required name="budget">
+                  <option value="">Select</option>
+                  <option value="tier_1">Tier 1</option>
+                  <option value="tier_2">Tier 2</option>
+                  <option value="tier_3">Tier 3</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Scope notes (optional)</label>
+                <input type="text" name="notes" placeholder="Anything that materially affects scope?" />
+              </div>
+            </div>
+
+            <label class="checkbox">
+              <input id="pricingAck" type="checkbox" required />
+              I have reviewed the pricing above
+            </label>
+
+            <button id="submitBtn" type="submit" class="btn btn-primary w-full">Submit intake</button>
+            <p id="statusMsg" class="status" aria-live="polite"></p>
+
+            <div class="disclaimer muted">
+              Phone is urgent-only. Most communication happens by text or email.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p class="muted">Answers without a phone call.</p>
+      </div>
+
+      <div class="faq">
+        <details class="faq-item">
+          <summary>Do I need a call to get started?</summary>
+          <p class="muted">No. Complete the intake and you’ll receive next steps by text or email.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Why do you require pricing acknowledgment?</summary>
+          <p class="muted">It prevents wasted time and keeps the process efficient for both sides.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I still call?</summary>
+          <p class="muted">Yes—urgent matters only. Otherwise we keep it async.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand footer-brand">
+          <span class="logo"></span>
+          <span>YOUR BRAND</span>
+        </div>
+        <div class="muted">Text preferred · Phone urgent-only</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#intake">Start Intake</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA (mobile-first retention) -->
+  <div class="sticky-cta">
+    <a class="btn btn-primary w-full" href="#intake">Start Intake</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
