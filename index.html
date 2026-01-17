@@ -1,490 +1,85 @@
-```html
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Licensed Electrician in Houston | Same-Day Service</title>
-  <meta name="description" content="Licensed residential electrician in Houston. Clear process, clean work, and direct communication. Call or request service." />
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  color: #111;
+  background: #fff;
+}
 
-  <!-- Optional: paste GA4 after you create it -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
+section, header, footer {
+  max-width: 900px;
+  margin: auto;
+  padding: 48px 24px;
+}
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --card2:#0d1728;
-      --ink:#eaf2ff;
-      --muted:#a9b8d6;
-      --line:rgba(255,255,255,.10);
-      --accent:#4f9cff;
-      --accent2:#34d399;
-      --warn:#fbbf24;
-      --shadow:0 18px 48px rgba(0,0,0,.35);
-      --radius:18px;
-      --max:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 20% 10%, rgba(79,156,255,.18), transparent 60%),
-                                  radial-gradient(900px 500px at 85% 15%, rgba(52,211,153,.14), transparent 60%),
-                                  var(--bg);
-              color:var(--ink);
-              font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-    a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:18px 18px 92px}
-    .top{
-      position:sticky;top:0;z-index:40;
-      background:rgba(11,18,32,.78);
-      backdrop-filter:saturate(170%) blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      max-width:var(--max);margin:0 auto;padding:12px 18px;
-      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    }
-    .brand{display:flex;flex-direction:column;gap:2px;min-width:240px}
-    .brand b{letter-spacing:.3px;font-size:14px}
-    .brand span{color:var(--muted);font-size:12px}
-    .links{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .pill{
-      text-decoration:none;
-      padding:9px 12px;border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-size:13px;
-    }
-    .pill:hover{transform:translateY(-1px);transition:.12s}
-    .pill.primary{background:linear-gradient(90deg, rgba(79,156,255,.85), rgba(79,156,255,.65));border-color:transparent}
-    .pill.good{background:linear-gradient(90deg, rgba(52,211,153,.85), rgba(52,211,153,.65));border-color:transparent;color:#081222}
-    .hero{
-      margin-top:18px;
-      border:1px solid var(--line);
-      border-radius:calc(var(--radius) + 6px);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      box-shadow:var(--shadow);
-      padding:22px;
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:16px;
-      align-items:start;
-    }
-    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
-    h1{margin:0 0 8px;font-size:34px;letter-spacing:-.6px;line-height:1.08}
-    .sub{margin:0;color:var(--muted);line-height:1.5;max-width:78ch}
-    .kpis{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-    .chip{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:8px 10px;border-radius:999px;
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      color:var(--muted);
-      font-size:12px;
-    }
-    .chip b{color:var(--ink)}
-    .panel{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
-      padding:16px;
-    }
-    .ctaBox{display:flex;flex-direction:column;gap:10px}
-    .bigbtn{
-      display:flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:14px;
-      border:1px solid var(--line);
-      text-decoration:none;font-weight:800;font-size:14px;
-      background:rgba(255,255,255,.04);
-    }
-    .bigbtn.primary{background:linear-gradient(90deg, rgba(79,156,255,.92), rgba(79,156,255,.65));border-color:transparent}
-    .bigbtn.secondary{background:linear-gradient(90deg, rgba(52,211,153,.92), rgba(52,211,153,.65));border-color:transparent;color:#081222}
-    .fine{font-size:12px;color:var(--muted);line-height:1.45;margin:0}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
-    .card{
-      grid-column:span 4;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      padding:16px;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-    }
-    @media (max-width: 900px){ .card{grid-column:span 6} }
-    @media (max-width: 640px){ .card{grid-column:span 12} h1{font-size:28px} }
-    .card h3{margin:0 0 8px;font-size:15px}
-    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
-    .sectionHead{margin-top:18px;display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .sectionHead h2{margin:0;font-size:18px;letter-spacing:-.2px}
-    .sectionHead .hint{margin:0;color:var(--muted);font-size:12px}
-    section{scroll-margin-top:92px}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width: 860px){ .two{grid-template-columns:1fr} }
-    ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.5}
-    .divider{height:1px;background:var(--line);margin:12px 0}
-    label{display:block;font-size:12px;color:var(--muted);margin:0 0 6px}
-    input,select,textarea{
-      width:100%;
-      padding:10px 10px;border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(0,0,0,.15);
-      color:var(--ink);
-      outline:none;
-      font-size:14px;
-    }
-    textarea{min-height:110px;resize:vertical}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media (max-width: 640px){ .row{grid-template-columns:1fr} }
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:10px 14px;border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--ink);
-      font-weight:800;font-size:13px;
-      cursor:pointer;
-    }
-    .btn.primary{background:linear-gradient(90deg, rgba(79,156,255,.92), rgba(79,156,255,.65));border-color:transparent}
-    .btn:hover{filter:brightness(1.03)}
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 10px;border-radius:999px;
-      border:1px solid rgba(251,191,36,.22);
-      background:rgba(251,191,36,.10);
-      color:#ffe9b0;
-      font-size:12px;
-    }
-    .footerStrip{
-      position:fixed;left:0;right:0;bottom:0;z-index:50;
-      border-top:1px solid var(--line);
-      background:rgba(11,18,32,.88);
-      backdrop-filter:saturate(170%) blur(10px);
-    }
-    .footerStrip .inner{
-      max-width:var(--max);margin:0 auto;padding:10px 18px;
-      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-      font-size:12px;color:var(--muted);
-    }
-    .footerStrip a{color:var(--accent);text-decoration:none}
-    .footerStrip a:hover{text-decoration:underline}
-    .muted{color:var(--muted)}
-  </style>
-</head>
+h1, h2, h3 {
+  margin-bottom: 12px;
+}
 
-<body>
-  <header class="top">
-    <div class="nav">
-      <div class="brand">
-        <b>Houston Residential Electric</b>
-        <span>Licensed • Insured • Same-day when available</span>
-      </div>
-      <nav class="links" aria-label="Primary">
-        <a class="pill" href="#services">Services</a>
-        <a class="pill" href="#process">Process</a>
-        <a class="pill" href="#reviews">Reviews</a>
-        <a class="pill" href="#faq">FAQ</a>
-        <a class="pill primary" href="#request">Request Service</a>
-      </nav>
-    </div>
-  </header>
+.hero {
+  text-align: center;
+}
 
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div>
-        <h1>Licensed electrician in Houston.<br/>Clear process. Clean work. No guesswork.</h1>
-        <p class="sub">
-          Residential troubleshooting and repairs done correctly—breaker trips, dead outlets, panel issues,
-          lighting, and safety concerns. We schedule defined service windows and communicate directly.
-        </p>
-        <div class="kpis">
-          <span class="chip"><b>Fast triage</b> by phone</span>
-          <span class="chip"><b>Professional evaluation</b> first</span>
-          <span class="chip"><b>Scope + options</b> before work</span>
-          <span class="chip"><b>Respectful</b> in your home</span>
-        </div>
-      </div>
+.btn-primary {
+  display: inline-block;
+  padding: 14px 24px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 16px;
+}
 
-      <aside class="panel ctaBox" aria-label="Contact">
-        <a class="bigbtn secondary" href="tel:+13463081350">Call: (346) 308-1350</a>
-        <a class="bigbtn primary" href="#request">Request service (60 seconds)</a>
-        <p class="fine">
-          If you’re comparing “cheapest,” we’re probably not the right fit.
-          If you want it done safely and cleanly, start here.
-        </p>
-        <div class="divider"></div>
-        <span class="badge">Emergency: burning smell, hot panel, sparking → call now</span>
-      </aside>
-    </section>
+.how-it-works ol {
+  line-height: 1.8;
+}
 
-    <section id="services">
-      <div class="sectionHead">
-        <h2>Services (problem-based)</h2>
-        <p class="hint">Simple categories homeowners recognize fast</p>
-      </div>
+.boundary {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 
-      <div class="grid">
-        <div class="card">
-          <h3>Power issues</h3>
-          <p>Breaker trips, partial outages, flickering, GFCI problems, “one room is dead,” loose neutrals.</p>
-        </div>
-        <div class="card">
-          <h3>Safety issues</h3>
-          <p>Burning smell, warm outlets, buzzing panels, aluminum wiring concerns, surge protection.</p>
-        </div>
-        <div class="card">
-          <h3>Functional upgrades</h3>
-          <p>Outlet additions, EV charger prep, lighting installs, fans, dimmers, smart switches.</p>
-        </div>
-        <div class="card">
-          <h3>Panel & service</h3>
-          <p>Panel troubleshooting, subpanels, load calculations, labeling, breaker replacements.</p>
-        </div>
-        <div class="card">
-          <h3>Code & inspection</h3>
-          <p>Corrective work for inspections, permits when needed, documentation for compliance.</p>
-        </div>
-        <div class="card">
-          <h3>Storm-related</h3>
-          <p>Surge and outage damage, water exposure evaluation, safety checks before re-energizing.</p>
-        </div>
-      </div>
-    </section>
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 16px;
+}
 
-    <section id="process">
-      <div class="sectionHead">
-        <h2>How it works</h2>
-        <p class="hint">This filters out chaos jobs automatically</p>
-      </div>
+.card {
+  border: 1px solid #ddd;
+  padding: 16px;
+}
 
-      <div class="panel two">
-        <div>
-          <h3 style="margin:0 0 10px;font-size:15px">1) Quick triage</h3>
-          <ul>
-            <li>What happened, when it started, and what you’ve tried</li>
-            <li>We’ll tell you if it’s urgent and what to shut off safely</li>
-          </ul>
-          <div class="divider"></div>
-          <h3 style="margin:0 0 10px;font-size:15px">2) Professional evaluation</h3>
-          <ul>
-            <li>We diagnose first (no blind guessing over the phone)</li>
-            <li>You get a clear scope and options before work begins</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="margin:0 0 10px;font-size:15px">3) Clean repair + closeout</h3>
-          <ul>
-            <li>We protect the work area and keep communication direct</li>
-            <li>We test, verify, and explain what was done</li>
-          </ul>
-          <div class="divider"></div>
-          <p class="muted" style="margin:0;font-size:13px;line-height:1.5">
-            We focus on correct diagnosis and safe workmanship. If your priority is a fast bargain or negotiating,
-            you’ll likely be happier with a different provider.
-          </p>
-        </div>
-      </div>
-    </section>
+.price {
+  font-weight: bold;
+}
 
-    <section id="reviews">
-      <div class="sectionHead">
-        <h2>Trust signals</h2>
-        <p class="hint">Replace these with your real items</p>
-      </div>
+.filter {
+  margin-top: 24px;
+  font-weight: bold;
+}
 
-      <div class="panel two">
-        <div>
-          <h3 style="margin:0 0 10px;font-size:15px">Licensing & insurance</h3>
-          <ul>
-            <li>Licensed electrician (TX) — add license # here</li>
-            <li>Insured — documentation available upon request</li>
-            <li>Service area: Houston metro</li>
-          </ul>
-          <div class="divider"></div>
-          <p class="fine">
-            Swap in real job photos (panels, neat wiring, labeled breakers). Avoid stock images—real builds trust.
-          </p>
-        </div>
-        <div>
-          <h3 style="margin:0 0 10px;font-size:15px">Reviews</h3>
-          <ul>
-            <li>“Showed up on time, explained everything clearly.”</li>
-            <li>“Clean work and no surprises.”</li>
-            <li>“Fixed an issue another company couldn’t.”</li>
-          </ul>
-          <p class="fine" style="margin-top:10px">
-            Once your Google Business Profile is verified, link your review page here.
-          </p>
-        </div>
-      </div>
-    </section>
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 
-    <section id="faq">
-      <div class="sectionHead">
-        <h2>FAQ</h2>
-        <p class="hint">Short, direct, homeowner-friendly</p>
-      </div>
+form {
+  display: grid;
+  gap: 12px;
+}
 
-      <div class="panel">
-        <div class="two">
-          <div>
-            <h3 style="margin:0 0 8px;font-size:15px">Do you give quotes over the phone?</h3>
-            <p class="muted" style="margin:0;font-size:13px;line-height:1.5">
-              We can give ballpark guidance for common issues, but final pricing requires an on-site evaluation.
-              That’s how we avoid guessing and surprises.
-            </p>
-            <div class="divider"></div>
-            <h3 style="margin:0 0 8px;font-size:15px">Do you offer same-day service?</h3>
-            <p class="muted" style="margin:0;font-size:13px;line-height:1.5">
-              When available, yes. Safety issues are prioritized.
-            </p>
-          </div>
-          <div>
-            <h3 style="margin:0 0 8px;font-size:15px">What’s considered an emergency?</h3>
-            <p class="muted" style="margin:0;font-size:13px;line-height:1.5">
-              Burning smell, sparking, hot panels/outlets, repeated breaker trips, or water exposure to electrical.
-              If unsure, call.
-            </p>
-            <div class="divider"></div>
-            <h3 style="margin:0 0 8px;font-size:15px">Will you pull permits if needed?</h3>
-            <p class="muted" style="margin:0;font-size:13px;line-height:1.5">
-              Yes—when the scope requires it. We’ll tell you up front.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+input, select, textarea {
+  padding: 10px;
+  font-size: 1rem;
+}
 
-    <section id="request">
-      <div class="sectionHead">
-        <h2>Request service</h2>
-        <p class="hint">This form builds a clean job description before you talk</p>
-      </div>
+.checkbox {
+  font-size: 0.9rem;
+}
 
-      <div class="panel">
-        <form id="serviceForm">
-          <div class="row">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" autocomplete="name" placeholder="Full name" required />
-            </div>
-            <div>
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" autocomplete="tel" placeholder="(###) ###-####" required />
-            </div>
-          </div>
+footer {
+  font-size: 0.85rem;
+  border-top: 1px solid #eee;
+}
 
-          <div class="row" style="margin-top:10px">
-            <div>
-              <label for="address">Address (Houston area)</label>
-              <input id="address" name="address" autocomplete="street-address" placeholder="Street, City" required />
-            </div>
-            <div>
-              <label for="issue">Issue type</label>
-              <select id="issue" name="issue" required>
-                <option value="" disabled selected>Select one</option>
-                <option>Breaker trips / outage</option>
-                <option>Outlet / switch not working</option>
-                <option>Panel issue / buzzing / heat</option>
-                <option>Lighting / fan install</option>
-                <option>EV charger prep</option>
-                <option>Safety concern (smell/sparking)</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div style="margin-top:10px">
-            <label for="details">What’s happening? (be specific)</label>
-            <textarea id="details" name="details" placeholder="When it started, what changed, what you’ve tried, and any photos you can share later."></textarea>
-          </div>
-
-          <div class="row" style="margin-top:10px">
-            <div>
-              <label for="timing">Preferred timing</label>
-              <select id="timing" name="timing" required>
-                <option value="" disabled selected>Select one</option>
-                <option>ASAP / emergency</option>
-                <option>Today (if available)</option>
-                <option>This week</option>
-                <option>Flexible</option>
-              </select>
-            </div>
-            <div>
-              <label for="access">Home access notes</label>
-              <input id="access" name="access" placeholder="Gate code, pets, parking, etc." />
-            </div>
-          </div>
-
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center">
-            <button class="btn primary" type="submit">Generate email request</button>
-            <a class="btn" href="tel:+13463081350">Or call now</a>
-            <span class="muted" style="font-size:12px">You’ll review the email before sending.</span>
-          </div>
-        </form>
-
-        <div class="divider"></div>
-        <p class="fine">
-          No hidden popups, no pressure. Clear evaluation first, then clean execution.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <div class="footerStrip">
-    <div class="inner">
-      <div>
-        <b>Disclaimer:</b> Information on this site is general. Electrical work can be dangerous.
-        If you suspect an emergency, call a professional immediately.
-      </div>
-      <div>
-        <a href="#top">Back to top</a>
-        <span class="muted"> • </span>
-        <span class="muted">© <span id="yr"></span></span>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
-
-    // Form -> opens user's email client with a prefilled request (no backend needed)
-    document.getElementById("serviceForm").addEventListener("submit", function(e){
-      e.preventDefault();
-
-      const v = id => (document.getElementById(id).value || "").trim();
-      const name = v("name");
-      const phone = v("phone");
-      const address = v("address");
-      const issue = v("issue");
-      const details = v("details");
-      const timing = v("timing");
-      const access = v("access");
-
-      const subject = encodeURIComponent(`Service request: ${issue} (${timing})`);
-      const body = encodeURIComponent(
-`Name: ${name}
-Phone: ${phone}
-Address: ${address}
-Issue: ${issue}
-Preferred timing: ${timing}
-Access notes: ${access || "N/A"}
-
-Details:
-${details || "N/A"}
-
-(Please reply with your next available service window and any prep steps.)`
-      );
-
-      // IMPORTANT: change this email to yours
-      const to = "migui7312@icloud.com";
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    });
-  </script>
-</body>
-</html>
-```
