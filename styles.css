@@ -1,2 +1,30 @@
-.status { font-size: 0.9rem; opacity: 0.8; }
-button:disabled { opacity: 0.6; cursor: not-allowed; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intake Received</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container" style="padding: 70px 20px;">
+      <div class="kicker">Confirmed</div>
+      <h1>Intake received.</h1>
+      <p class="lead" id="who"></p>
+      <p class="muted">You’ll receive next steps by text shortly. Please don’t call unless urgent.</p>
+      <div class="cta-row">
+        <a class="btn btn-secondary" href="index.html#pricing">Back to pricing</a>
+        <a class="btn btn-primary" href="index.html#intake">Submit another intake</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    document.getElementById("who").textContent = name ? `Thanks, ${name}.` : "";
+  </script>
+</body>
+</html>
