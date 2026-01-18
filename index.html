@@ -1,289 +1,298 @@
-:root{
-  --bg:#ffffff;
-  --bg-alt:#f6f7f8;
-  --text:#0b0d0f;
-  --muted:#4a5561;
-  --border:#d9dde2;
-  --accent:#0b5fff;
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Houston Residential Electrician | Evenings & Weekends</title>
+  <meta name="description" content="Houston electrician for homeowners. Evenings & weekends available. Submit a quick intake to get an estimate within 24 hours." />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  --radius:16px;
-  --shadow:none;
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="brand-name">Houston Electrician</div>
+          <div class="brand-sub">Residential Electrician · Houston</div>
+        </div>
+      </div>
 
-  --container:720px;
+      <div class="header-actions">
+        <a class="link" href="tel:+13463081350">Call</a>
+        <a class="btn btn--primary" href="#intake">Get estimate</a>
+      </div>
+    </div>
+  </header>
 
-  --space-1:8px;
-  --space-2:12px;
-  --space-3:16px;
-  --space-4:24px;
-  --space-5:32px;
-  --space-6:48px;
-  --space-7:72px;
-}
+  <main>
+    <!-- HERO -->
+    <section class="section hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>Electrical work done right — without the runaround.</h1>
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  color:var(--text);
-  background:var(--bg);
-  line-height:1.6;
-}
+            <p class="subhead">
+              Houston electrician for homeowners who’ve been burned by cheap work
+              or priced out by big companies.
+            </p>
 
-a{color:inherit; text-decoration:none}
-a.link{
-  color:var(--accent);
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
-a.link:hover{opacity:.9}
+            <div class="badges" role="list" aria-label="Service highlights">
+              <span class="badge" role="listitem">Local Houston service</span>
+              <span class="badge" role="listitem">Evenings & weekends</span>
+              <span class="badge" role="listitem">Emergency work available</span>
+            </div>
 
-.container{
-  max-width: calc(var(--container) + 48px);
-  margin: 0 auto;
-  padding: 0 20px;
-}
+            <div class="cta-row">
+              <a class="btn btn--primary" href="#intake">Get a quick estimate</a>
+              <a class="link" href="tel:+13463081350">Or call/text: (346) 308-1350</a>
+            </div>
 
-.section{
-  padding: var(--space-6) 0;
-}
-@media (min-width: 900px){
-  .section{padding: var(--space-7) 0;}
-  .container{padding: 0 24px;}
-}
+            <p class="fineprint">
+              Response within 24 hours. Emergencies priced accordingly.
+            </p>
+          </div>
 
-.section--alt{
-  background:var(--bg-alt);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
+          <aside class="hero-card card" aria-label="What you get">
+            <h3 class="card-title">What you get</h3>
+            <ul class="list">
+              <li>Clear explanation before work starts</li>
+              <li>Inspection fee applied toward the job</li>
+              <li>Work done once — no corner-cutting</li>
+              <li>Scheduling that respects your time</li>
+            </ul>
+            <div class="card-divider"></div>
+            <p class="small">
+              Prefer text? Send your name + zip code to:
+              <a class="link" href="sms:+13463081350">(346) 308-1350</a>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-h1{
-  font-size: clamp(34px, 4.2vw, 44px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--space-3);
-}
-h2{
-  font-size: clamp(20px, 2.4vw, 24px);
-  line-height:1.25;
-  letter-spacing: -0.01em;
-  margin:0 0 var(--space-3);
-}
-h3{
-  font-size:16px;
-  margin:0 0 var(--space-2);
-}
-p{margin:0 0 var(--space-3); color:var(--text)}
-.small{font-size:14px; color:var(--muted)}
-.fineprint{font-size:13px; color:var(--muted); margin-top: var(--space-2)}
-.subhead{font-size:18px; color:var(--muted); margin-bottom: var(--space-4)}
+    <!-- PAIN ALIGNMENT -->
+    <section class="section">
+      <div class="container">
+        <h2>Most people get stuck between two bad options.</h2>
+        <p>
+          Electrical problems are frustrating, expensive, and usually urgent.
+          You either hire the cheapest option and hope it holds, or call a large company
+          that treats your job like it’s not worth their time.
+        </p>
+        <p><strong>Neither feels right.</strong></p>
+      </div>
+    </section>
 
-.site-header{
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--border);
-  z-index: 10;
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 0;
-  gap: var(--space-4);
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  min-width: 200px;
-}
-.brand-mark{
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  background: var(--text);
-}
-.brand-name{font-weight:700; letter-spacing:-0.01em}
-.brand-sub{font-size:13px; color:var(--muted)}
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap: 14px;
-}
+    <!-- REFRAME -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2>Reasonable pricing doesn’t mean cutting corners.</h2>
+        <p>
+          It means the job is done once, the work is explained clearly,
+          and you’re not paying for someone else’s overhead.
+        </p>
+        <p>
+          You deserve electrical work that lasts — at a price that actually makes sense.
+        </p>
+      </div>
+    </section>
 
-.card{
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-4);
-  box-shadow: var(--shadow);
-}
-.card-title{font-weight:700}
-.card-divider{height:1px; background:var(--border); margin: var(--space-4) 0}
+    <!-- WHY US -->
+    <section class="section">
+      <div class="container">
+        <h2>Why homeowners choose us</h2>
+        <div class="grid-2">
+          <div class="card">
+            <ul class="list">
+              <li>We show up when others won’t</li>
+              <li>Nights and weekends available</li>
+              <li>Clear explanations before work starts</li>
+              <li>No rushing jobs to get to the next one</li>
+              <li>Respect for your home and time</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p>
+              Most of our work comes from people who were disappointed elsewhere.
+            </p>
+            <p class="small">
+              If you’re dealing with a recurring issue, a “mystery problem,” or work you don’t trust,
+              we’ll start with a clean inspection and a clear plan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.hero{padding-top: var(--space-6)}
-.hero-grid{
-  display:grid;
-  gap: var(--space-5);
-}
-@media (min-width: 900px){
-  .hero-grid{
-    grid-template-columns: 1.35fr .65fr;
-    align-items:start;
-  }
-}
+    <!-- PROOF -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2>Real work. Real homes.</h2>
+        <p>Projects we handle include:</p>
+        <div class="grid-2">
+          <div class="card">
+            <ul class="list">
+              <li>Panel upgrades</li>
+              <li>Outlet & lighting installs</li>
+              <li>Troubleshooting & repairs</li>
+            </ul>
+          </div>
+          <div class="card">
+            <ul class="list">
+              <li>Remodel electrical work</li>
+              <li>Ceiling fans / fixtures</li>
+              <li>Small business jobs</li>
+            </ul>
+          </div>
+        </div>
+        <p class="small">
+          Photos and reviews are being added as projects are completed.
+        </p>
+      </div>
+    </section>
 
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 10px;
-  margin: 0 0 var(--space-4);
-}
-.badge{
-  border:1px solid var(--border);
-  border-radius: 999px;
-  padding: 8px 12px;
-  font-size: 13px;
-  color: var(--muted);
-  background: #fff;
-}
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="steps">
+          <div class="step card">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Quick intake</div>
+              <div class="small">Tell us what’s going on. Takes 2–3 minutes.</div>
+            </div>
+          </div>
 
-.cta-row{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap: 14px;
-  margin: var(--space-4) 0 var(--space-2);
-}
+          <div class="step card">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Inspection</div>
+              <div class="small">We assess the issue. Inspection fee goes toward the job.</div>
+            </div>
+          </div>
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  border-radius: 12px;
-  padding: 12px 16px;
-  font-weight: 650;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
-.btn--primary{
-  background: var(--text);
-  color: #fff;
-}
-.btn--primary:hover{opacity:.92}
-.btn--full{width:100%}
+          <div class="step card">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Clear price first</div>
+              <div class="small">You’ll know the cost before work begins.</div>
+            </div>
+          </div>
 
-.grid-2{
-  display:grid;
-  gap: var(--space-4);
-}
-@media (min-width: 900px){
-  .grid-2{grid-template-columns: 1fr 1fr;}
-}
+          <div class="step card">
+            <div class="step-num">4</div>
+            <div>
+              <div class="step-title">Job done right</div>
+              <div class="small">We stay until it’s finished properly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.list{
-  margin:0;
-  padding-left: 18px;
-  color: var(--text);
-}
-.list li{margin-bottom: 10px}
+    <!-- SOFT OBJECTION -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2>Not a big company. Not a rushed crew.</h2>
+        <p>
+          Just a skilled electrician who takes pride in doing things right
+          and is willing to work when others won’t.
+        </p>
+      </div>
+    </section>
 
-.steps{
-  display:grid;
-  gap: var(--space-3);
-}
-.step{
-  display:flex;
-  gap: var(--space-3);
-  align-items:flex-start;
-}
-.step-num{
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  flex: 0 0 auto;
-}
-.step-title{font-weight:700; margin-bottom: 4px}
+    <!-- INTAKE FORM -->
+    <section class="section" id="intake">
+      <div class="container">
+        <div class="form-wrap">
+          <div class="form-copy">
+            <h2>Tell us what’s going on</h2>
+            <p>We’ll review your request and get back to you within 24 hours.</p>
+            <p class="small">
+              Prefer to call or text? <a class="link" href="tel:+13463081350">(346) 308-1350</a>
+            </p>
+          </div>
 
-.form-wrap{
-  display:grid;
-  gap: var(--space-4);
-}
-@media (min-width: 900px){
-  .form-wrap{
-    grid-template-columns: 1fr 1fr;
-    align-items:start;
-  }
-}
+          <form class="card form"
+                action="https://formsubmit.co/miguelangel1.lara2002@gmail.com"
+                method="POST">
+            <!-- FormSubmit options -->
+            <input type="hidden" name="_subject" value="New Electrical Intake (Website)" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://bigmig10.github.io/houstonelectrician.github.io/confirmation.html" />
 
-.form label{
-  display:block;
-  margin-bottom: var(--space-3);
-}
-.form label span{
-  display:block;
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: var(--text);
-  font-weight: 600;
-}
-.req{color: var(--accent); font-weight: 700}
-.help{display:block; font-size:13px; color: var(--muted); margin-top: 6px}
+            <label>
+              <span>Name <span class="req">*</span></span>
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
 
-input, textarea, select{
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px 12px;
-  font-size: 16px;
-  background: #fff;
-  color: var(--text);
-  outline: none;
-}
-textarea{resize: vertical; min-height: 110px}
-input:focus, textarea:focus, select:focus{
-  border-color: rgba(11,95,255,0.55);
-  box-shadow: 0 0 0 4px rgba(11,95,255,0.12);
-}
+            <label>
+              <span>Phone number <span class="req">*</span></span>
+              <input name="phone" type="tel" autocomplete="tel" required />
+              <span class="help">We respond by text or call.</span>
+            </label>
 
-.site-footer{
-  border-top: 1px solid var(--border);
-  padding: var(--space-5) 0;
-  background: #fff;
-}
-.footer-inner{
-  display:grid;
-  gap: var(--space-4);
-}
-@media (min-width: 900px){
-  .footer-inner{grid-template-columns: 1fr 1fr 1fr;}
-}
-.footer-title{font-weight:700; margin-bottom: 6px}
+            <label>
+              <span>Address or ZIP code</span>
+              <input name="location" type="text" autocomplete="postal-code" />
+              <span class="help">Houston area only.</span>
+            </label>
 
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0b0d0f;
-    --bg-alt:#101316;
-    --text:#f4f6f8;
-    --muted:#b5bec8;
-    --border:#2a3138;
-    --accent:#6aa5ff;
-  }
-  body{background:var(--bg); color:var(--text)}
-  .site-header{
-    background: rgba(11,13,15,0.85);
-    border-bottom:1px solid var(--border);
-  }
-  .badge{background: transparent}
-  input, textarea, select{background: transparent}
-  .btn--primary{background: #f4f6f8; color:#0b0d0f}
-}
+            <label>
+              <span>What’s going on?</span>
+              <textarea name="issue" rows="4" placeholder="Brief description of the issue"></textarea>
+            </label>
+
+            <label>
+              <span>How urgent is this?</span>
+              <select name="urgency">
+                <option value="Not urgent">Not urgent</option>
+                <option value="Soon (this week)">Soon (this week)</option>
+                <option value="Urgent / emergency">Urgent / emergency</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Best time to contact you</span>
+              <select name="best_time">
+                <option value="Evening">Evening</option>
+                <option value="Weekend">Weekend</option>
+                <option value="Anytime">Anytime</option>
+              </select>
+            </label>
+
+            <button class="btn btn--primary btn--full" type="submit">Get my estimate →</button>
+
+            <p class="fineprint">
+              By submitting, you agree we can contact you about this request.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <div class="footer-title">Service area</div>
+        <div class="small">Houston-only · Residential + small business</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Availability</div>
+        <div class="small">Evenings & weekends · Emergency work available</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Response time</div>
+        <div class="small">Within 24 hours</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
